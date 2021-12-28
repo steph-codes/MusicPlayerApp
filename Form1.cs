@@ -25,13 +25,15 @@ namespace MusicPlayerApp
             OpenFileDialog ofd = new OpenFileDialog();
             
             //Code to select Multiple files
-            ofd.Multiselect = true
-
-                //if file is selected or not
-            if ofd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+            ofd.Multiselect = true;
+            
+            //if file is selected or not
+            if (ofd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
             {
                 files = ofd.SafeFileNames; //Save the names of the track in files array
                 paths = ofd.FileNames;   //Save the paths of the tracks in path array
+                
+                //Display the music titles in listbox
                 for(int i=0; i<files.Length; i++)
                 {
                     listBoxSongs.Items.Add(files[i]); //Display Songs in ListBox
